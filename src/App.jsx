@@ -5,10 +5,17 @@ import Leiaute from './pages/leiaute';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import NotFound from './pages/NotFound';
+// Alunos
 import ListagemAluno from './pages/alunos/Listagem';
 import CadastroAluno from './pages/alunos/Cadastro';
 import AlteracaoAluno from './pages/alunos/Alteracao';
-import ExclusaoAluno from './pages/alunos/Exclusao';
+import ExclusaoAluno from './pages/ufs/Exclusao';
+// UF
+import ListagemUF from './pages/ufs/Listagem';
+import CadastroUF from './pages/ufs/Cadastro';
+import AlteracaoUF from './pages/ufs/Alteracao';
+import ExclusaoUF from './pages/ufs/Exclusao';
+// Instrutor
 import ListagemInstrutor from './pages/instrutores/Listagem';
 import CadastroInstrutor from './pages/instrutores/Cadastro';
 import AlteracaoInstrutor from './pages/instrutores/Alteracao';
@@ -31,6 +38,12 @@ const App = () => {
                 <Route path="cadastrar" element={<CadastroAluno />} />
                 <Route path="alterar/:id" element={<AlteracaoAluno />} />
                 <Route path="excluir/:id" element={<ExclusaoAluno />} />
+              </Route>
+              <Route path="ufs">
+                <Route index element={<ListagemUF />} />
+                <Route path="cadastrar" element={<CadastroUF />} />
+                <Route path="alterar/:id" element={<AlteracaoUF />} />
+                <Route path="excluir/:id" element={<ExclusaoUF />} />
               </Route>
               <Route path="instrutores">
                 <Route index element={<ListagemInstrutor />} />

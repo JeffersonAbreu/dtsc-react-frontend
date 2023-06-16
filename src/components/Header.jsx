@@ -20,8 +20,8 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
           <a className="navbar-brand" href="/">
-            <span className={classes.imgLogo}>🏋</span>
-            <span className="fs-3">Academia</span>
+            <span className={classes.imgLogo}><img src="/public/logo.png" alt="Logo" width="95" height="95"/></span>
+            <span className="fs-3">Dog Tracker System Control - DTSC</span>
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
             <span className="navbar-toggler-icon"></span>
@@ -29,6 +29,7 @@ const Header = () => {
           <div className="collapse navbar-collapse justify-content-end" id="navMenu">
             <div className="navbar-nav">
               <NavLink to="/" className="nav-link">Principal</NavLink>
+              <NavLink to="/ufs" className="nav-link">UFs</NavLink>
               <NavLink to="/alunos" className="nav-link">Alunos</NavLink>
               <NavLink to="/instrutores" className="nav-link">Instrutores</NavLink>
               <NavLink to="/sobre" className="nav-link">Sobre</NavLink>

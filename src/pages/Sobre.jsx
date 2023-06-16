@@ -3,9 +3,16 @@ const Sobre = () => {
         <>
             <h1>Sobre Nós</h1>
             <hr />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dignissimos deserunt magnam voluptates dolorem similique itaque ratione, animi repellat necessitatibus nihil deleniti? Maxime a dolor cumque molestiae, doloribus suscipit alias?</p>
+            <p>
+                Developers - Project: Dog Tracker
+                <ul>
+                    <li>Jefferson Abreu</li>
+                    <li>Lucas Macedo Bernardino</li>
+                    <li>Raphael Macedo Bernardino</li>
+                </ul>
+            </p>
         </>
     )
-}
+};
 
-export default Sobre
+export default Sobre;

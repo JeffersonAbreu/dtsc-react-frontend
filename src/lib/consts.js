@@ -1,0 +1,1 @@
+export default { API_URL: 'https://dtsc-node-sequelize.onrender.com' }
