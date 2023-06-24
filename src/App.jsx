@@ -6,10 +6,10 @@ import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import NotFound from './pages/NotFound';
 // Alunos
-import ListagemAluno from './pages/alunos/Listagem';
-import CadastroAluno from './pages/alunos/Cadastro';
-import AlteracaoAluno from './pages/alunos/Alteracao';
-import ExclusaoAluno from './pages/ufs/Exclusao';
+import ListagemAluno from './pages/tutors/Listagem';
+// import CadastroAluno from './pages/alunos/Cadastro';
+// import AlteracaoAluno from './pages/alunos/Alteracao';
+// import ExclusaoAluno from './pages/ufs/Exclusao';
 // UF
 import ListagemUF from './pages/ufs/Listagem';
 import CadastroUF from './pages/ufs/Cadastro';
@@ -33,11 +33,11 @@ const App = () => {
             <Route path="/" element={<Leiaute />}>
               <Route index element={<Home />} />
               <Route path="sobre" element={<Sobre />} />
-              <Route path="alunos">
+              <Route path="tutors">
                 <Route index element={<ListagemAluno />} />
-                <Route path="cadastrar" element={<CadastroAluno />} />
+                {/* <Route path="cadastrar" element={<CadastroAluno />} />
                 <Route path="alterar/:id" element={<AlteracaoAluno />} />
-                <Route path="excluir/:id" element={<ExclusaoAluno />} />
+                <Route path="excluir/:id" element={<ExclusaoAluno />} /> */}
               </Route>
               <Route path="ufs">
                 <Route index element={<ListagemUF />} />
