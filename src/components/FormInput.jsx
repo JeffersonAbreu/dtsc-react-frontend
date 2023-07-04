@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-const FormInput = ({ type, field, placeholder, onChange, label, value, error }) => {
+const FormInput = ({ type, field, placeholder, onChange, label, value, error}) => {
   return (
     <>
       <div className="form-floating mt-3">

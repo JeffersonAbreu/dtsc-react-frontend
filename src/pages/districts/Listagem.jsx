@@ -4,29 +4,29 @@ import estilos from "./Listagem.module.css"
 import http from "../../lib/consts";
 
 const Listagem = () => {
-  const [ufs, setUfs] = useState([]);
+  const [districts, setDistricts] = useState([]);
   const [loading, setLoading] = useState(true);
 
 
 
 
-  const carregarUfs = () => {
+  const carregarBairros = () => {
     http
-      .get("/ufs")
+      .get("/district")
       .then((resp) => {
-        setUfs(resp.data);
+        setDistricts(resp.data);
         setLoading(false);
       });
   }
 
   useEffect(() => {
-    carregarUfs();
+    carregarBairros();
   }, []);
 
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">
-        <h1>Listagem de UFs</h1>
+        <h1>Listagem de Bairros</h1>
         <Link className="btn btn-primary" to="cadastrar">Novo</Link>
       </div>
       <hr />
@@ -41,23 +41,25 @@ const Listagem = () => {
           <thead>
             <tr>
               <th>Id</th>
-              <th>Nome</th>
-              <th>Sigla</th>
+              <th>Nome do bairro</th>
+              <th>Nome da cidade</th>
+              <th>UF</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
             {
-              ufs.map((uf) =>
-                <tr key={uf.id}>
-                  <td>{uf.id}</td>
-                  <td>{uf.name}</td>
-                  <td>{uf.sigla}</td>
+              districts.map((district) =>
+                <tr key={district.id}>
+                  <td>{district.id}</td>
+                  <td>{district.name}</td>
+                  <td>{district.city.name}</td>
+                  <td>{district.city.uf.sigla}</td>
                   <td>
-                    <Link className="btn btn-sm btn-success me-1" to={`/ufs/alterar/${uf.id}`}>
+                    <Link className="btn btn-sm btn-success me-1" to={`/districts/alterar/${district.id}`}>
                       <i className="bi bi-pen" title="Alterar"></i>
                     </Link>
-                    <Link className="btn btn-sm btn-danger" to={`/ufs/excluir/${uf.id}`}>
+                    <Link className="btn btn-sm btn-danger" to={`/districts/excluir/${district.id}`}>
                       <i className="bi bi-trash" title="Excluir"></i>
                     </Link>
                   </td>

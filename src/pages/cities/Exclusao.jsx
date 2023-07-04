@@ -5,17 +5,17 @@ import { useEffect, useState } from "react";
 import http from "../../lib/consts";
 
 const Exclusao = () => {
-    const [uf, setUf] = useState({});
+    const [cidade, setCidade] = useState({});
     const id = useParams().id;
     const navigate = useNavigate();
 
     function carregarDados() {
-        http.get(`/ufs/${id}`)
+        http.get(`/cities/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
-                    setUf(resp.data);
+                    setCidade(resp.data);
                 } else if (resp.status === 404) {
-                    navigate("/ufs");
+                    navigate("/cities");
                 } else {
                     console.log(resp);
                 }
@@ -30,11 +30,11 @@ const Exclusao = () => {
     }, [id]);
 
     function handleDelete() {
-        http.delete(`/ufs/${id}`)
+        http.delete(`/cities/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
-                    alert("UF excluído com sucesso!");
-                    navigate("/ufs")
+                    alert("Cidade excluído com sucesso!");
+                    navigate("/cities")
                 } else {
                     console.log(resp);
                 }
@@ -46,10 +46,10 @@ const Exclusao = () => {
 
     return (
         <>
-            <h1>Exclusão de UF</h1>
+            <h1>Exclusão de Cidade</h1>
             <hr />
-            <p className="lead">Deseja realmente excluir a UF {uf.nome}?</p>
-            <FormButtons cancelTarget="/ufs" negativeTitle="Não" positiveTitle="Sim" positiveAction={handleDelete} buttonType="button" />
+            <p className="lead">Deseja realmente excluir a Cidade {cidade.nome}?</p>
+            <FormButtons cancelTarget="/cities" negativeTitle="Não" positiveTitle="Sim" positiveAction={handleDelete} buttonType="button" />
         </>
     )
 }
