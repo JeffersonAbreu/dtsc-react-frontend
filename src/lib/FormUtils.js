@@ -12,10 +12,15 @@ export const validar = (callbackAction, inputs, setErrors, validator) => {
         });
 }
 
-export const handleChange = (event, setInputs, inputs) => {
+export const handleChange = (event, setInputs) => {
     const name = event.target.name;
     const value = event.target.value;
     //setInputs({ ...inputs, [name]: value });
     //opção sem necessidade da variável de estado no parâmetro
-    setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
+    setInputs((prevInputs) => ({ ...prevInputs, [name]: value}) 
+    );
+    if(event.target.type ==="select-one" && event.target.id ==="ufId"){
+        setInputs((prevInputs)=>({name: prevInputs.name,uf: {id: event.target.value},ufId:event.target.value
+        }))
+    }
 }

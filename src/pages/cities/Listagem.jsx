@@ -4,29 +4,29 @@ import estilos from "./Listagem.module.css"
 import http from "../../lib/consts";
 
 const Listagem = () => {
-  const [ufs, setUfs] = useState([]);
+  const [cities, setCities] = useState([]);
   const [loading, setLoading] = useState(true);
 
 
 
 
-  const carregarUfs = () => {
+  const carregarCidades = () => {
     http
-      .get("/ufs")
+      .get("/cities")
       .then((resp) => {
-        setUfs(resp.data);
+        setCities(resp.data);
         setLoading(false);
       });
   }
 
   useEffect(() => {
-    carregarUfs();
+    carregarCidades();
   }, []);
 
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">
-        <h1>Listagem de UFs</h1>
+        <h1>Listagem de Cidades</h1>
         <Link className="btn btn-primary" to="cadastrar">Novo</Link>
       </div>
       <hr />
@@ -41,23 +41,23 @@ const Listagem = () => {
           <thead>
             <tr>
               <th>Id</th>
-              <th>Nome</th>
-              <th>Sigla</th>
+              <th>Nome da cidade</th>
+              <th>UF</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
             {
-              ufs.map((uf) =>
-                <tr key={uf.id}>
-                  <td>{uf.id}</td>
-                  <td>{uf.name}</td>
-                  <td>{uf.sigla}</td>
+              cities.map((city) =>
+                <tr key={city.id}>
+                  <td>{city.id}</td>
+                  <td>{city.name}</td>
+                  <td>{city.uf.name}</td>
                   <td>
-                    <Link className="btn btn-sm btn-success me-1" to={`/ufs/alterar/${uf.id}`}>
+                    <Link className="btn btn-sm btn-success me-1" to={`/cities/alterar/${city.id}`}>
                       <i className="bi bi-pen" title="Alterar"></i>
                     </Link>
-                    <Link className="btn btn-sm btn-danger" to={`/ufs/excluir/${uf.id}`}>
+                    <Link className="btn btn-sm btn-danger" to={`/cities/excluir/${city.id}`}>
                       <i className="bi bi-trash" title="Excluir"></i>
                     </Link>
                   </td>

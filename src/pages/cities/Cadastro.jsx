@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { handleChange, validar } from "../../lib/FormUtils";
-import validator from "../../lib/ValidatorUf";
-import FormUf from "../../components/uf/Form";
+import validator from "../../lib/ValidatorCity";
+import FormCity from "../../components/cidades/Form";
 import http from "../../lib/consts";
 
 const Cadastro = () => {
@@ -24,14 +24,20 @@ const Cadastro = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    validarLocal(() => {      
+    validarLocal(() => {     
+      const payload = {
+        name:inputs.name,
+        uf: {
+          id: inputs.ufId
+        }
+      }
       http
-        .post("/ufs", inputs)
+        .post("/cities", payload)
         .then((resp) => {
-          console.log(inputs)
+          console.log(resp)
           if (resp.status == 201) {
-            alert("UF inserida com sucesso!");
-            navigate("/ufs")
+            alert("Cidade inserida com sucesso!");
+            navigate("/cities")
           }
         }
         ).catch((resp) =>{
@@ -41,17 +47,16 @@ const Cadastro = () => {
         
     });
   }
-
   useEffect(() => {
     validarLocal();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputs])
 
-  return (
+  return (  
     <>
-      <h1>Cadastro de UF</h1>
+      <h1>Cadastro de Cidades</h1>
       <hr />
-      <FormUf handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
+      <FormCity handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
     </>
   )
 }
