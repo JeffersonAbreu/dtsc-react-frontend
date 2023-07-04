@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { validar, handleChange } from "../../lib/FormUtils";
-import validator from "../../lib/ValidatorUf";
-import FormUf from "../../components/uf/Form";
+import validator from "../../lib/ValidatorCity";
+import FormCity from "../../components/cidades/Form";
 import http from "../../lib/consts";
 
 
@@ -20,12 +20,12 @@ const Alteracao = () => {
 
     function carregarDados() {
         // setInputs({ ...inputs, id: id });
-        http.get(`/ufs/${id}`)
+        http.get(`/cities/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
                     setInputs(resp.data);
                 } else if (resp.status === 404) {
-                    navigate("/ufs");
+                    navigate("/cities");
                 } else {
                     console.log(resp);
                 }
@@ -37,6 +37,7 @@ const Alteracao = () => {
 
     useEffect(() => {
         carregarDados();
+        
     }, [id]);
 
     function validarLocal(callbackAction) {
@@ -51,15 +52,18 @@ const Alteracao = () => {
         e.preventDefault();
         validarLocal(() => {
             http
-                .put(`/ufs/${id}`, inputs)
+                .put(`/cities/${id}`, inputs)
                 .then((resp) => {
                     if (resp.status == 200) {
-                        alert("UF alterada com sucesso!");
-                        navigate("/ufs")
+                        alert("Cidade alterada com sucesso!");
+                        navigate("/cities")
                     }
                 });
         });
     }
+
+
+    
 
     useEffect(() => {
         validarLocal();
@@ -68,9 +72,9 @@ const Alteracao = () => {
 
     return (
         <>
-            <h1>Alteração de UF</h1>
+            <h1>Alteração de Cidade</h1>
             <hr />
-            <FormUf handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
+            <FormCity handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
         </>
     )
 }

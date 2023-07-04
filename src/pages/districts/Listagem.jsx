@@ -1,29 +1,32 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import estilos from "./Listagem.module.css"
-import axios from "axios";
+import http from "../../lib/consts";
 
 const Listagem = () => {
-  const [alunos, setAlunos] = useState([]);
+  const [districts, setDistricts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const carregarAlunos = () => {
-    axios
-      .get("http://localhost:3001/alunos")
+
+
+
+  const carregarBairros = () => {
+    http
+      .get("/district")
       .then((resp) => {
-        setAlunos(resp.data);
+        setDistricts(resp.data);
         setLoading(false);
       });
   }
 
   useEffect(() => {
-    carregarAlunos();
+    carregarBairros();
   }, []);
 
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">
-        <h1>Listagem de Alunos</h1>
+        <h1>Listagem de Bairros</h1>
         <Link className="btn btn-primary" to="cadastrar">Novo</Link>
       </div>
       <hr />
@@ -38,27 +41,25 @@ const Listagem = () => {
           <thead>
             <tr>
               <th>Id</th>
-              <th>Nome</th>
-              <th>E-mail</th>
-              <th>Telefone</th>
-              <th>Mensalidade</th>
+              <th>Nome do bairro</th>
+              <th>Nome da cidade</th>
+              <th>UF</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
             {
-              alunos.map((aluno) =>
-                <tr key={aluno.id}>
-                  <td>{aluno.id}</td>
-                  <td>{aluno.nome}</td>
-                  <td>{aluno.email}</td>
-                  <td>{aluno.telefone}</td>
-                  <td>{aluno.mensalidade}</td>
+              districts.map((district) =>
+                <tr key={district.id}>
+                  <td>{district.id}</td>
+                  <td>{district.name}</td>
+                  <td>{district.city.name}</td>
+                  <td>{district.city.uf.sigla}</td>
                   <td>
-                    <Link className="btn btn-sm btn-success me-1" to={`/alunos/alterar/${aluno.id}`}>
+                    <Link className="btn btn-sm btn-success me-1" to={`/districts/alterar/${district.id}`}>
                       <i className="bi bi-pen" title="Alterar"></i>
                     </Link>
-                    <Link className="btn btn-sm btn-danger" to={`/alunos/excluir/${aluno.id}`}>
+                    <Link className="btn btn-sm btn-danger" to={`/districts/excluir/${district.id}`}>
                       <i className="bi bi-trash" title="Excluir"></i>
                     </Link>
                   </td>
