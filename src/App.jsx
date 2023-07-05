@@ -23,6 +23,7 @@ import ListagemTutor from './pages/tutors/Listagem';
 import ListagemDistrict from './pages/districts/Listagem';
 import CadastroDistrict from './pages/districts/Cadastro';
 import ExclusaoDistrict from './pages/districts/Exclusao';
+import AlteracaoDistrict from './pages/districts/Alteracao';
 const App = () => {
   const [tema, setTema] = useState("light");
 
@@ -56,9 +57,7 @@ const App = () => {
                 <Route index element={<ListagemDistrict />} />
                 <Route path="cadastrar" element={<CadastroDistrict />} />
                 <Route path="excluir/:id" element={<ExclusaoDistrict />} />
-                {/*
-                <Route path="alterar/:id" element={<AlteracaoCity />} />
-                 */}
+                <Route path="alterar/:id" element={<AlteracaoDistrict />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>
