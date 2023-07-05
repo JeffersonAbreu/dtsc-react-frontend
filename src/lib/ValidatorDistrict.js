@@ -5,4 +5,5 @@ const validator = yup.object().shape({
     cityId: yup.number("Somente números").required("Cidade obrigatório"),
 });
 
+
 export default validator;

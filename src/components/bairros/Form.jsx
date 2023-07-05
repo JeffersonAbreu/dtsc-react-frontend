@@ -9,12 +9,12 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
   const [optionsCities, setOptionsCities] = useState([]);
   const navigate = useNavigate();
 
-  function carregarCities(){
+  function carregarCities() {
     http.get(`/cities`)
       .then((resp) => {
         if (resp.status === 200) {
           const dados = resp.data.map((obj) => {
-            
+
             return {
               value: obj.id,
               label: obj.name,

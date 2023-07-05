@@ -5,6 +5,7 @@ import validator from "../../lib/ValidatorCity";
 import FormCity from "../../components/cidades/Form";
 import http from "../../lib/consts";
 
+
 const Cadastro = () => {
   
   const [inputs, setInputs] = useState({});

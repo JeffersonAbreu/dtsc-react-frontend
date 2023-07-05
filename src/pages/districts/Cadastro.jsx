@@ -7,6 +7,7 @@ import http from "../../lib/consts";
 
 const Cadastro = () => {
 
+  
   const [inputs, setInputs] = useState({});
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();

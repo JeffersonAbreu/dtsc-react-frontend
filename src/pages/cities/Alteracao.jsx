@@ -5,7 +5,6 @@ import validator from "../../lib/ValidatorCity";
 import FormCity from "../../components/cidades/Form";
 import http from "../../lib/consts";
 
-
 const Alteracao = () => {
     const [inputs, setInputs] = useState({});
     const [errors, setErrors] = useState({});

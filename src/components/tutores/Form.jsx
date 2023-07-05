@@ -15,5 +15,4 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
     )
 }
 
-export default Form
-
+export default Form;

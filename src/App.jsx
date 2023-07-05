@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from "react";
 import AppContext from "./components/AppContext";
-import Leiaute from './pages/leiaute';
+import Leiaute from './pages/Leiaute';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import NotFound from './pages/NotFound';
@@ -21,6 +21,14 @@ import CadastroInstrutor from './pages/instrutores/Cadastro';
 import AlteracaoInstrutor from './pages/instrutores/Alteracao';
 import ExclusaoInstrutor from './pages/instrutores/Exclusao';
 
+//CITY
+import ListagemCity from './pages/cities/Listagem';
+import CadastroCity from './pages/cities/Cadastro';
+import AlteracaoCity from './pages/cities/Alteracao';
+import ExclusaoCity from './pages/cities/Exclusao';
+//DISTRICT
+import ListagemDistrict from './pages/districts/Listagem';
+import CadastroDistrict from './pages/districts/Cadastro';
 
 const App = () => {
   const [tema, setTema] = useState("light");
