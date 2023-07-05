@@ -8,8 +8,6 @@ const Listagem = () => {
   const [loading, setLoading] = useState(true);
 
 
-
-
   const carregarBairros = () => {
     http
       .get("/district")

@@ -5,6 +5,7 @@ import validator from "../../lib/ValidatorAluno";
 import { handleChange, validar } from "../../lib/FormUtils";
 import FormAluno from "../../components/alunos/Form";
 
+
 const Cadastro = () => {
 
   const [inputs, setInputs] = useState({});

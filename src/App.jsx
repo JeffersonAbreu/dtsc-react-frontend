@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from "react";
 import AppContext from "./components/AppContext";
-import Leiaute from './pages/leiaute';
+import Leiaute from './pages/Leiaute';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import NotFound from './pages/NotFound';
@@ -12,6 +12,7 @@ import ListagemUF from './pages/ufs/Listagem';
 import CadastroUF from './pages/ufs/Cadastro';
 import AlteracaoUF from './pages/ufs/Alteracao';
 import ExclusaoUF from './pages/ufs/Exclusao';
+
 
 //CITY
 import ListagemCity from './pages/cities/Listagem';
