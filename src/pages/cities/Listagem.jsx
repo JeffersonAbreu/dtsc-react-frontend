@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import estilos from "./Listagem.module.css"
 import http from "../../lib/consts";
 
+
 const Listagem = () => {
   const [cities, setCities] = useState([]);
   const [loading, setLoading] = useState(true);

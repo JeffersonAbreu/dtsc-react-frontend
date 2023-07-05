@@ -23,4 +23,4 @@ export const handleChange = (event, setInputs) => {
         setInputs((prevInputs)=>({name: prevInputs.name,uf: {id: event.target.value},ufId:event.target.value
         }))
     }
-}
+};

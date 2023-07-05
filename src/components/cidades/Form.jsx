@@ -12,6 +12,7 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
         "id":1
     }
   */
+ 
   const navigate = useNavigate();
 
   function carregarUfs() {
