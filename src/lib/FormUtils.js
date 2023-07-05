@@ -25,5 +25,8 @@ export const handleChange = (event, setInputs) => {
     }else if (event.target.type ==="select-one" && event.target.id ==="cityId"){
         setInputs((prevInputs)=>({name: prevInputs.name,city: {id: event.target.value}, cityId: prevInputs.cityId
         }))
+    }else if (event.target.type ==="select-one" && event.target.id ==="dogSizeId"){
+        setInputs((prevInputs)=>({name: prevInputs.name,dogSize: {id: event.target.value}, dogSizeId: prevInputs.dogSizeId
+        }))
     }
 };

@@ -32,6 +32,11 @@ import ListagemDogSize from './pages/dogSize/Listagem';
 import CadastroDogSize from './pages/dogSize/Cadastro';
 import ExclusaoDogSize from './pages/dogSize/Exclusao';
 import AlteracaoDogSize from './pages/dogSize/Alteracao';
+//Breeds
+import ListagemBreeds from './pages/breeds/Listagem';
+import CadastroBreeds from './pages/breeds/Cadastro';
+import ExclusaoBreeds from './pages/breeds/Exclusao';
+import AlteracaoBreeds from './pages/breeds/Alteracao';
 const App = () => {
   const [tema, setTema] = useState("light");
 
@@ -79,7 +84,12 @@ const App = () => {
                 <Route path="excluir/:id" element={<ExclusaoDogSize />} />
                 <Route path="alterar/:id" element={<AlteracaoDogSize />} />
               </Route>
-
+              <Route path="breeds">
+                <Route index element={<ListagemBreeds />} />
+                <Route path="cadastrar" element={<CadastroBreeds />} />
+                <Route path="excluir/:id" element={<ExclusaoBreeds />} />
+                <Route path="alterar/:id" element={<AlteracaoBreeds />} />
+              </Route>
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
