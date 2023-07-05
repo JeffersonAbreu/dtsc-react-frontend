@@ -5,14 +5,21 @@ import Leiaute from './pages/Leiaute';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import NotFound from './pages/NotFound';
-// Tutors
-import ListagemTutor from './pages/tutors/Listagem';
+// Alunos
+import ListagemAluno from './pages/alunos/Listagem';
+import CadastroAluno from './pages/alunos/Cadastro';
+import AlteracaoAluno from './pages/alunos/Alteracao';
+import ExclusaoAluno from './pages/ufs/Exclusao';
 // UF
 import ListagemUF from './pages/ufs/Listagem';
 import CadastroUF from './pages/ufs/Cadastro';
 import AlteracaoUF from './pages/ufs/Alteracao';
 import ExclusaoUF from './pages/ufs/Exclusao';
-
+// Instrutor
+import ListagemInstrutor from './pages/instrutores/Listagem';
+import CadastroInstrutor from './pages/instrutores/Cadastro';
+import AlteracaoInstrutor from './pages/instrutores/Alteracao';
+import ExclusaoInstrutor from './pages/instrutores/Exclusao';
 
 //CITY
 import ListagemCity from './pages/cities/Listagem';
@@ -22,6 +29,7 @@ import ExclusaoCity from './pages/cities/Exclusao';
 //DISTRICT
 import ListagemDistrict from './pages/districts/Listagem';
 import CadastroDistrict from './pages/districts/Cadastro';
+
 const App = () => {
   const [tema, setTema] = useState("light");
 
@@ -39,24 +47,23 @@ const App = () => {
                 <Route path="alterar/:id" element={<AlteracaoAluno />} />
                 <Route path="excluir/:id" element={<ExclusaoAluno />} /> */}
               </Route>
+              <Route path="instrutores">
+                <Route index element={<ListagemInstrutor />} />
+                <Route path="cadastrar" element={<CadastroInstrutor />} />
+                <Route path="alterar/:id" element={<AlteracaoInstrutor />} />
+                <Route path="excluir/:id" element={<ExclusaoInstrutor />} />
+              </Route>
               <Route path="ufs">
                 <Route index element={<ListagemUF />} />
                 <Route path="cadastrar" element={<CadastroUF />} />
                 <Route path="alterar/:id" element={<AlteracaoUF />} />
                 <Route path="excluir/:id" element={<ExclusaoUF />} />
               </Route>
-              <Route path="cities">
-                <Route index element={<ListagemCity />} />
-                <Route path="cadastrar" element={<CadastroCity />} />
-                <Route path="excluir/:id" element={<ExclusaoCity />} />
-                <Route path="alterar/:id" element={<AlteracaoCity />} />  
-              </Route>
-              <Route path="districts">
-                <Route index element={<ListagemDistrict />} />
-                 <Route path="cadastrar" element={<CadastroDistrict />} />
-                {/*
-                <Route path="excluir/:id" element={<ExclusaoCity />} />
-                <Route path="alterar/:id" element={<AlteracaoCity />} />   */}
+              <Route path="instrutores">
+                <Route index element={<ListagemInstrutor />} />
+                <Route path="cadastrar" element={<CadastroInstrutor />} />
+                <Route path="alterar/:id" element={<AlteracaoInstrutor />} />
+                <Route path="excluir/:id" element={<ExclusaoInstrutor />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>
