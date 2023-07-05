@@ -15,15 +15,15 @@ import ListagemCity from './pages/cities/Listagem';
 import CadastroCity from './pages/cities/Cadastro';
 import AlteracaoCity from './pages/cities/Alteracao';
 import ExclusaoCity from './pages/cities/Exclusao';
-//Tutor
-import ListagemTutor from './pages/tutors/Listagem';
-
-
 //DISTRICT
 import ListagemDistrict from './pages/districts/Listagem';
 import CadastroDistrict from './pages/districts/Cadastro';
 import ExclusaoDistrict from './pages/districts/Exclusao';
 import AlteracaoDistrict from './pages/districts/Alteracao';
+//Funcionários
+import ListagemEmployee from './pages/employees/Listagem';
+//Tutor
+import ListagemTutor from './pages/tutors/Listagem';
 const App = () => {
   const [tema, setTema] = useState("light");
 
@@ -59,6 +59,13 @@ const App = () => {
                 <Route path="excluir/:id" element={<ExclusaoDistrict />} />
                 <Route path="alterar/:id" element={<AlteracaoDistrict />} />
               </Route>
+              <Route path="employees">
+                <Route index element={<ListagemEmployee />} />
+                <Route path="cadastrar" element={<CadastroDistrict />} />
+                <Route path="excluir/:id" element={<ExclusaoDistrict />} />
+                <Route path="alterar/:id" element={<AlteracaoDistrict />} />
+              </Route>
+
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
