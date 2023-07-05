@@ -5,4 +5,5 @@ const validator = yup.object().shape({
     sigla: yup.string().required("Sigla é obrigatório.").matches(/^[A-Z]{2}$/, 'A sigla deve conter duas letras maiúsculas.')
 });
 
+
 export default validator;

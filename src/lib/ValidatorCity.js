@@ -5,4 +5,5 @@ const validator = yup.object().shape({
     ufId: yup.number("Somente números").required("UF obrigatório")
 });
 
+
 export default validator;

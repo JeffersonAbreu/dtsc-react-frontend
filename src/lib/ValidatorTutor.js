@@ -11,4 +11,5 @@ const validator = yup.object().shape({
     districtId: yup.number("Somente números.").required("Bairro é obrigatório.")
 });
 
+
 export default validator;

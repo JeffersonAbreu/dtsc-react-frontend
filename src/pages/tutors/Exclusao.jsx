@@ -4,6 +4,7 @@ import FormButtons from "../../components/FormButtons";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+
 const Exclusao = () => {
     const [aluno, setAluno] = useState({});
     const id = useParams().id;
