@@ -6,17 +6,17 @@ import http from "../../lib/consts";
 
 
 const Exclusao = () => {
-    const [cidade, setCidade] = useState({});
+    const [bairro, setBairro] = useState({});
     const id = useParams().id;
     const navigate = useNavigate();
 
     function carregarDados() {
-        http.get(`/cities/${id}`)
+        http.get(`/district/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
-                    setCidade(resp.data);
+                    setBairro(resp.data);
                 } else if (resp.status === 404) {
-                    navigate("/cities");
+                    navigate("/districts");
                 } else {
                     console.log(resp);
                 }
@@ -31,11 +31,11 @@ const Exclusao = () => {
     }, [id]);
 
     function handleDelete() {
-        http.delete(`/cities/${id}`)
+        http.delete(`/district/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
-                    alert("Cidade excluído com sucesso!");
-                    navigate("/cities")
+                    alert("Bairro excluído com sucesso!");
+                    navigate("/districts")
                 } else {
                     console.log(resp);
                 }
@@ -47,9 +47,9 @@ const Exclusao = () => {
 
     return (
         <>
-            <h1>Exclusão de Cidade</h1>
+            <h1>Exclusão de Bairro</h1>
             <hr />
-            <p className="lead">Deseja realmente excluir a Cidade {cidade.name}?</p>
+            <p className="lead">Deseja realmente excluir o Bairro {bairro.name}?</p>
             <FormButtons cancelTarget="/cities" negativeTitle="Não" positiveTitle="Sim" positiveAction={handleDelete} buttonType="button" />
         </>
     )
