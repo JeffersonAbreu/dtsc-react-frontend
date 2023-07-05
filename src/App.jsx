@@ -15,15 +15,28 @@ import ListagemCity from './pages/cities/Listagem';
 import CadastroCity from './pages/cities/Cadastro';
 import AlteracaoCity from './pages/cities/Alteracao';
 import ExclusaoCity from './pages/cities/Exclusao';
-//Tutor
-import ListagemTutor from './pages/tutors/Listagem';
-
-
 //DISTRICT
 import ListagemDistrict from './pages/districts/Listagem';
 import CadastroDistrict from './pages/districts/Cadastro';
 import ExclusaoDistrict from './pages/districts/Exclusao';
 import AlteracaoDistrict from './pages/districts/Alteracao';
+//Funcionários
+import ListagemEmployee from './pages/employees/Listagem';
+import CadastroEmployee from './pages/employees/Cadastro';
+import ExclusaoEmployee from './pages/employees/Exclusao';
+import AlteracaoEmployee from './pages/employees/Alteracao';
+//Tutor
+import ListagemTutor from './pages/tutors/Listagem';
+//DogSize
+import ListagemDogSize from './pages/dogSize/Listagem';
+import CadastroDogSize from './pages/dogSize/Cadastro';
+import ExclusaoDogSize from './pages/dogSize/Exclusao';
+import AlteracaoDogSize from './pages/dogSize/Alteracao';
+//Breeds
+import ListagemBreeds from './pages/breeds/Listagem';
+import CadastroBreeds from './pages/breeds/Cadastro';
+import ExclusaoBreeds from './pages/breeds/Exclusao';
+import AlteracaoBreeds from './pages/breeds/Alteracao';
 const App = () => {
   const [tema, setTema] = useState("light");
 
@@ -58,6 +71,24 @@ const App = () => {
                 <Route path="cadastrar" element={<CadastroDistrict />} />
                 <Route path="excluir/:id" element={<ExclusaoDistrict />} />
                 <Route path="alterar/:id" element={<AlteracaoDistrict />} />
+              </Route>
+              <Route path="employees">
+                <Route index element={<ListagemEmployee />} />
+                <Route path="cadastrar" element={<CadastroEmployee />} />
+                <Route path="excluir/:id" element={<ExclusaoEmployee />} />
+                <Route path="alterar/:id" element={<AlteracaoEmployee />} />
+              </Route>
+              <Route path="dogsize">
+                <Route index element={<ListagemDogSize />} />
+                <Route path="cadastrar" element={<CadastroDogSize />} />
+                <Route path="excluir/:id" element={<ExclusaoDogSize />} />
+                <Route path="alterar/:id" element={<AlteracaoDogSize />} />
+              </Route>
+              <Route path="breeds">
+                <Route index element={<ListagemBreeds />} />
+                <Route path="cadastrar" element={<CadastroBreeds />} />
+                <Route path="excluir/:id" element={<ExclusaoBreeds />} />
+                <Route path="alterar/:id" element={<AlteracaoBreeds />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>
