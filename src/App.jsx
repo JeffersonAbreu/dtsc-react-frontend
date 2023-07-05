@@ -22,6 +22,9 @@ import ExclusaoDistrict from './pages/districts/Exclusao';
 import AlteracaoDistrict from './pages/districts/Alteracao';
 //Funcionários
 import ListagemEmployee from './pages/employees/Listagem';
+import CadastroEmployee from './pages/employees/Cadastro';
+import ExclusaoEmployee from './pages/employees/Exclusao';
+import AlteracaoEmployee from './pages/employees/Alteracao';
 //Tutor
 import ListagemTutor from './pages/tutors/Listagem';
 const App = () => {
@@ -61,9 +64,9 @@ const App = () => {
               </Route>
               <Route path="employees">
                 <Route index element={<ListagemEmployee />} />
-                <Route path="cadastrar" element={<CadastroDistrict />} />
-                <Route path="excluir/:id" element={<ExclusaoDistrict />} />
-                <Route path="alterar/:id" element={<AlteracaoDistrict />} />
+                <Route path="cadastrar" element={<CadastroEmployee />} />
+                <Route path="excluir/:id" element={<ExclusaoEmployee />} />
+                <Route path="alterar/:id" element={<AlteracaoEmployee />} />
               </Route>
 
               <Route path="*" element={<NotFound />} />
