@@ -20,19 +20,17 @@ const Cadastro = () => {
   }
 
 
-
-
   function handleSubmit(e) {
     e.preventDefault();
     validarLocal(() => {
       const payload = {
-        city: {
-          id: inputs.cityId
-        },
         name: inputs.name,
+        city:{
+          id: inputs.cityId
+        }
       }
       http
-        .post("/districts", payload)
+        .post("/district", payload)
         .then((resp) => {
           console.log(resp)
           if (resp.status == 201) {
@@ -43,15 +41,6 @@ const Cadastro = () => {
         ).catch((resp) => {
           console.log(resp)
         })
-
-      /*
-        {
-          "city": {
-          "id":1
-        },
-        "name":"Bairro teste"
-}
-      */
     });
   }
   useEffect(() => {
