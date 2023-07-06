@@ -20,7 +20,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
           <a className="navbar-brand" href="/">
-            <span className={classes.imgLogo}><img src="/public/logo.png" alt="Logo" width="95" height="95"/></span>
+            <span className={classes.imgLogo}><img src="/logo.png" alt="Logo" width="95" height="95"/></span>
             <span className="fs-3">Dog Tracker System Control - DTSC</span>
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">

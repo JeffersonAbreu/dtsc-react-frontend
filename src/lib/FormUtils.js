@@ -19,6 +19,7 @@ export const handleChange = (event, setInputs) => {
     //opção sem necessidade da variável de estado no parâmetro
     setInputs((prevInputs) => ({ ...prevInputs, [name]: value}) 
     );
+    console.log(event.target.id);
     if(event.target.type ==="select-one" && event.target.id ==="ufId"){
         setInputs((prevInputs)=>({name: prevInputs.name,uf: {id: event.target.value},ufId:event.target.value
         }))

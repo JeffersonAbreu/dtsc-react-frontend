@@ -40,6 +40,8 @@ import AlteracaoBreeds from './pages/breeds/Alteracao';
 //Vaccines
 import ListagemVaccines from './pages/vaccines/Listagem';
 import CadastroVaccines from './pages/vaccines/Cadastro';
+import ExclusaoVaccines from './pages/vaccines/Exclusao';
+import AlteracaoVaccines from './pages/vaccines/Alteracao';
 const App = () => {
   const [tema, setTema] = useState("light");
 
@@ -96,8 +98,8 @@ const App = () => {
               <Route path="vaccines">
                 <Route index element={<ListagemVaccines />} />
                 <Route path="cadastrar" element={<CadastroVaccines />} />
-                <Route path="excluir/:id" element={<ExclusaoBreeds />} />
-                <Route path="alterar/:id" element={<AlteracaoBreeds />} />
+                <Route path="excluir/:id" element={<ExclusaoVaccines />} />
+                <Route path="alterar/:id" element={<AlteracaoVaccines />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>

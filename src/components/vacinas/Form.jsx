@@ -46,8 +46,8 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
 
   return (
     <form onSubmit={handleSubmit} noValidate autoComplete="off">
-      <FormInput type="text" field="name" label="Nome" placeholder="Nome da Cidade" error={errors?.name} onChange={handleChange} value={inputs?.name} />
-      <div className="form-floating mt-3 d-flex justify-content-between">
+      <FormInput type="text" field="name" label="Nome" placeholder="Nome da vacina" error={errors?.name} onChange={handleChange} value={inputs?.name} />
+      <div className="form-floating mt-3">
       <FormSelect field="breedId" label="Raça" placeholder="Selecione a Raça..." error={errors?.breedId} onChange={handleChange} value={inputs?.breedId} options={optionsBreeds} />
       </div>
       <FormButtons cancelTarget="/vaccines" />
