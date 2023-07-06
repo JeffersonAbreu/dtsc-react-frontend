@@ -40,6 +40,10 @@ import AlteracaoBreeds from './pages/breeds/Alteracao';
 //Vaccines
 import ListagemVaccines from './pages/vaccines/Listagem';
 import CadastroVaccines from './pages/vaccines/Cadastro';
+//Tipo de ocorrência
+import ListagemTypeOfOccurrence from './pages/typeOfOccurrence/Listagem';
+import ExclusaoTypeOfOccurrence from './pages/typeOfOccurrence/Exclusao';
+import CadastroTypeOfOcurrence from './pages/typeOfOccurrence/Cadastro';
 const App = () => {
   const [tema, setTema] = useState("light");
 
@@ -97,6 +101,12 @@ const App = () => {
                 <Route index element={<ListagemVaccines />} />
                 <Route path="cadastrar" element={<CadastroVaccines />} />
                 <Route path="excluir/:id" element={<ExclusaoBreeds />} />
+                <Route path="alterar/:id" element={<AlteracaoBreeds />} />
+              </Route>
+              <Route path="typeOfOccurrence">
+                <Route index element={<ListagemTypeOfOccurrence />} />
+                <Route path="cadastrar" element={<CadastroTypeOfOcurrence />} />
+                <Route path="excluir/:id" element={<ExclusaoTypeOfOccurrence />} />
                 <Route path="alterar/:id" element={<AlteracaoBreeds />} />
               </Route>
               <Route path="*" element={<NotFound />} />
