@@ -42,7 +42,7 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
   return (
     <form onSubmit={handleSubmit} noValidate autoComplete="off">
       <FormInput type="text" field="name" label="Nome da Raça" placeholder="Nome da Raça" error={errors?.name} onChange={handleChange} value={inputs?.name} />
-      <FormSelect field="dogSizeId" label="Porte" placeholder="Selecione o Porte..." error={errors?.dogSizeId} onChange={handleChange} value={inputs?.dogsize?.id} options={optionsDogSizes} />
+      <FormSelect field="dogSizeId" label="Porte" placeholder="Selecione o Porte..." error={errors?.dogSizeId} onChange={handleChange} value={inputs?.dogSize?.id} options={optionsDogSizes} />
       <FormButtons cancelTarget="/breeds" />
     </form>
   )
