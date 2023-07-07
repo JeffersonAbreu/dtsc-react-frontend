@@ -17,7 +17,7 @@ const Alteracao = () => {
 
 
 
-    function carregarDados() {
+    function carregarDados(id) {
         // setInputs({ ...inputs, id: id });
         http.get(`/vacinas/${id}`)
             .then((resp) => {
@@ -35,9 +35,8 @@ const Alteracao = () => {
     }
 
     useEffect(() => {
-        carregarDados();
-        
-    }, [id]);
+        carregarDados(id);
+    });
 
     function validarLocal(callbackAction) {
         validar(callbackAction, inputs, setErrors, validator);

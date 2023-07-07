@@ -40,15 +40,12 @@ import AlteracaoBreeds from './pages/breeds/Alteracao';
 //Vaccines
 import ListagemVaccines from './pages/vaccines/Listagem';
 import CadastroVaccines from './pages/vaccines/Cadastro';
-<<<<<<< main
+import ExclusaoVaccines from './pages/vaccines/Exclusao';
+import AlteracaoVaccines from './pages/vaccines/Alteracao';
 //Tipo de ocorrência
 import ListagemTypeOfOccurrence from './pages/typeOfOccurrence/Listagem';
 import ExclusaoTypeOfOccurrence from './pages/typeOfOccurrence/Exclusao';
 import CadastroTypeOfOcurrence from './pages/typeOfOccurrence/Cadastro';
-=======
-import ExclusaoVaccines from './pages/vaccines/Exclusao';
-import AlteracaoVaccines from './pages/vaccines/Alteracao';
->>>>>>> main
 const App = () => {
   const [tema, setTema] = useState("light");
 
